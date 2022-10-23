@@ -52,6 +52,13 @@ header.sticky {
     box-shadow: 0 0 10px rgb(0 0 0 / 20%);
 }
 
+footer {
+    text-align: center;
+    padding: 50px 0;
+    font-size: var(--pFont);
+    color: var(--secondColor);
+}
+
 
 
 #header {
@@ -267,4 +274,225 @@ header.sticky {
     line-height: 25px;
     margin-bottom: 20px;
 
+}
+
+.portfolioHead {
+    align-items: center;
+}
+
+.portfolioHead h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.portfolioHead p {
+    font-size: var(--pFont);
+    color: var(--secondColor);
+    line-height: 25px;
+    margin-bottom: 20px;
+}
+
+.portfolioContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    grid-gap: 2rem;
+    align-items: center;
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.colunas {
+    position: relative;
+}
+
+.colunas img {
+    max-width: 100%;
+    width: 350px;
+    height: auto;
+    /* (OBJECT FIT COVER) Com esse valor, a imagem é redimensionada com sua proporção mantida, contudo, ela será 
+    redimensionada para que não deixe nenhum espaço vazio no contêiner
+    FONT: https://www.alura.com.br/artigos/css-object-fit-trabalhando-proporcoes*/
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.portfolioContentText h3 {
+    position: absolute;
+    width: 100%;
+    font-size: 35px;
+    color: var(--bgColor);
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 0;
+    transition: all .50s;
+}
+
+.portfolioContentText:hover h3 {
+    padding-bottom: 50%;
+    opacity: 1;
+}
+
+.portfolioContentText h5 {
+    position: absolute;
+    width: 100%;
+    font-size: 16px;
+    color: var(--bgColor);
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 0;
+    transition: all .50s;
+}
+
+.portfolioContentText:hover h5 {
+    padding-bottom: 40%;
+    opacity: 1;
+}
+
+.contact {
+    background: linear-gradient(360deg, #8b008b, #ba55d3);
+    margin-top: 150px;
+    padding: 50px 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.contactText h3 {
+    font-size: 25px;
+    color: var(--bgColor);
+    margin-bottom: 20px;
+}
+
+.contactText p {
+    font-size: var(--pFont);
+    color: var(--bgColor);
+    margin-bottom: 20px;
+}
+
+.formulario input[type="email"] {
+    padding-left: 10px;
+    max-width: 100%;
+    width: 450px;
+    background: var(--bgColor);
+    color: var(--textColor);
+    border: none;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.formulario input[type="submit"] {
+    padding: 15px;
+    background: var(--mainColor);
+    border: none;
+    margin: 0 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+@media(max-width: 1200px) {
+    section {
+        padding-left: 20px;
+        padding-right: 20px;
+        transition: .3s;
+    }
+
+    .homeImage img {
+        max-width: 450px;
+        transition: .3s;
+    }
+
+    :root {
+        --bigFont: 4rem;
+        --h2Font: 1rem;
+        --pFont: 1rem;
+        transition: .3s;
+    }
+}
+
+@media (max-width: 860px) {
+    .home {
+        grid-template-columns: 1fr;
+        min-height: 100vh;
+        grid-gap: 1rem;
+    }
+
+    .homeImage img {
+        text-align: center;
+    }
+}
+
+@media(max-width: 768px) {
+    #navbarIcon {
+        display: block;
+    }
+
+    :root {
+        --bigFont: 3rem;
+        --h2Font: 0.8rem;
+        transition: .3s;
+    }
+
+    .contact {
+        width: 285px;
+    }
+
+    .home {
+        min-height: 80%;
+    }
+
+    .navbarHeader {
+        position: absolute;
+        top: -1000px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: #ccc;
+        opacity: 0.8;
+        text-align: center;
+        transition: all .50s;
+    }
+
+    .navbarHeader a {
+        display: block;
+        padding: 0.8rem;
+    }
+
+    .navbarHeader a:hover {
+        background: var(--mainColor);
+        color: var(--bgColor);
+    }
+
+    .navbarHeader a::after {
+        display: none;
+    }
+
+    .navbarHeader.active {
+        top: 100%;
+    }
+
+    .serviceIntens {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .aboutImage {
+        text-align: center;
+    }
+
+    .aboutText {
+        text-align: center;
+    }
+
+    .portfolioContent {
+        grid-template-columns: 2fr;
+    }
 }
