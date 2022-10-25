@@ -68,6 +68,9 @@ footer {
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+    background: black;
+
+
 }
 
 .logoHeader img {
@@ -86,7 +89,7 @@ footer {
 }
 
 .navbarHeader a {
-    color: var(--textColor);
+    color: white;
     font-size: var(--pFont);
     font-weight: 500;
     padding: 10px 20px;
@@ -109,7 +112,7 @@ footer {
 
 #navbarIcon {
     font-size: 25px;
-    color: var(--textColor);
+    color: var(--mainColor);
     z-index: 11;
     cursor: pointer;
     display: none;
@@ -133,6 +136,7 @@ footer {
     background: var(--mainColor);
     transform: scale(1.2);
 }
+
 
 .home {
     min-height: 100vh;
@@ -169,8 +173,6 @@ footer {
     margin-bottom: 20px;
 }
 
-.homeImage {}
-
 .homeSocialMedia a {
     width: 40px;
     height: 40px;
@@ -180,12 +182,13 @@ footer {
     justify-content: center;
     background: var(--bgColor);
     margin: 0 20px 30px 0;
+    color: black;
 
 }
 
 .homeSocialMedia a:hover {
     transform: scale(1.2);
-    background: rgb(139, 0, 0);
+    background: var(--secondColor);
     transition: 0.50s;
 
 }
@@ -220,7 +223,7 @@ footer {
     cursor: pointer;
 }
 
-.serviceIntenImage {
+.serviceIntenImage img {
     max-height: 100%;
     width: 80px;
     height: auto;
@@ -249,7 +252,7 @@ footer {
     antes do elemento ser efetivamente modificado”. 
     Fonte: https://developer.mozilla.org/pt-BR/docs/Web/CSS/will-change
     */
-    transform: perspective (1000px) rotateX(4.80deg) rotateY(10.2deg) scale3d(1.8, 1.0, 1.0);
+    transform: perspective(1000px) rotateX(4.80deg) rotateY(10.2deg) scale3d(1.0, 1.0, 1.0);
 }
 
 .about {
@@ -261,7 +264,7 @@ footer {
 
 .about img {
     max-width: 100%;
-    width: 350px;
+    width: 500px;
     height: auto;
 }
 
@@ -295,8 +298,10 @@ footer {
 }
 
 .portfolioContent {
+    display: flex;
+    justify-content: space-evenly;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
     grid-gap: 2rem;
     align-items: center;
     margin-top: 10px;
@@ -323,12 +328,15 @@ footer {
     position: absolute;
     width: 100%;
     font-size: 35px;
-    color: var(--bgColor);
+    color: var(--mainColor);
     bottom: 0;
     left: 50%;
     transform: translate(-50%);
     opacity: 0;
     transition: all .50s;
+    /*Coloca contorno no texto*/
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
 }
 
 .portfolioContentText:hover h3 {
@@ -340,12 +348,14 @@ footer {
     position: absolute;
     width: 100%;
     font-size: 16px;
-    color: var(--bgColor);
+    color: var(--mainColor);
     bottom: 0;
     left: 50%;
     transform: translate(-50%);
     opacity: 0;
     transition: all .50s;
+    -webkit-text-stroke-width: 0.7px;
+    -webkit-text-stroke-color: #000;
 }
 
 .portfolioContentText:hover h5 {
@@ -426,6 +436,9 @@ footer {
 
     .homeImage img {
         text-align: center;
+        margin: 0 auto;
+        display: flex;
+        padding-right: 100px
     }
 }
 
@@ -463,6 +476,7 @@ footer {
     .navbarHeader a {
         display: block;
         padding: 0.8rem;
+        color: var(--textColor);
     }
 
     .navbarHeader a:hover {

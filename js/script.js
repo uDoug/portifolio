@@ -1,7 +1,7 @@
 const header = document.querySelector("header");
 
 window.addEventListener("scroll", function () {
-    header.classList.toggle9("sticky", window.scrollY > 0);
+    header.classList.toggle("sticky", window.scrollY > 0);
 
 });
 
@@ -13,10 +13,12 @@ menu.onclick = () => {
     navList.classList.toggle('active');
 }
 
-const sr = Scrollreveal({
+
+const sr = ScrollReveal({
     distance: '50px',
     duration: 2500,
     reset: true
-});
+
+})
 
 sr.reveal('.homeText', { delay: 350, origin: 'left' })
